@@ -13,7 +13,7 @@ public class InitDB {
 	public static void main(String[] args) {
 		try {
 		      Context context = new InitialContext();
-		      CategoryRemote categoryRemote = (CategoryRemote) context.lookup("LicenseKeeperEJB/CategoryBean/remote");
+		      CategoryRemote categoryRemote = (CategoryRemote) context.lookup("LicenseKeeper/CategoryBean/remote");
 		      
 		      categoryRemote.saveCategory(new Category("OS - Windows - Home", "Home edition of Windows Operating System"));
 		      categoryRemote.saveCategory(new Category("OS - Windows - Professional", "Professional edition of Windows Operating System"));
