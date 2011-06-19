@@ -130,6 +130,9 @@ public class InitDB {
 			System.out.println("-------------------------------");
 			System.out.println("- End of the insertion part ! -");
 			System.out.println("-------------------------------");
+			
+			/*User tmpUser = remote.getUser("admin");
+			System.out.println(tmpUser.getPassword());*/
 
 		} catch (NamingException e) {
 			e.printStackTrace();
