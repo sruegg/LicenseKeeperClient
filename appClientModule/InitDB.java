@@ -133,6 +133,8 @@ public class InitDB {
 			
 			/*User tmpUser = remote.getUser("admin");
 			System.out.println(tmpUser.getPassword());*/
+			
+			LicensedObjectOperatingSystem temp = remote.getLicensedObjectOperatingSystem(1);
 
 		} catch (NamingException e) {
 			e.printStackTrace();
