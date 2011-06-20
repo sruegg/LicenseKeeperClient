@@ -69,72 +69,59 @@ public class InitDB {
 			Collection<LicensedObjectKey> licensedOK4 = new ArrayList<LicensedObjectKey>();
 			licensedOK4.add(remote.getLicensedObjectKey(4));
 
-			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 2, 1,
-					licensedOK1));
-			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 4, 1,
-					licensedOK2));
-			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 3, 1,
-					licensedOK3));
-			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 3, 6));
-			remote.saveLicensedObjectVersion(new LicensedObjectVersion(10, 2,
-					2, licensedOK4));
-
-			Collection<LicensedObjectVersion> licensedOV1 = new ArrayList<LicensedObjectVersion>();
-			licensedOV1.add(remote.getLicensedObjectVersion(1));
-			Collection<LicensedObjectVersion> licensedOV2 = new ArrayList<LicensedObjectVersion>();
-			licensedOV2.add(remote.getLicensedObjectVersion(2));
-			Collection<LicensedObjectVersion> licensedOV3 = new ArrayList<LicensedObjectVersion>();
-			licensedOV3.add(remote.getLicensedObjectVersion(3));
-			Collection<LicensedObjectVersion> licensedOV4 = new ArrayList<LicensedObjectVersion>();
-			licensedOV4.add(remote.getLicensedObjectVersion(4));
-			Collection<LicensedObjectVersion> licensedOV5 = new ArrayList<LicensedObjectVersion>();
-			licensedOV5.add(remote.getLicensedObjectVersion(5));
-
 			remote.saveLicensedObject(new LicensedObjectOperatingSystem(
 					"Microsoft", "Windows 7 Home Premium", "Home use OS",
-					remote.getCategory(1), "SP1", licensedOV1));
+					remote.getCategory(1), "SP1"));
 			remote.saveLicensedObject(new LicensedObjectOperatingSystem(
 					"Microsoft", "Windows 7 Professional",
-					"Professional use OS", remote.getCategory(2), "-",
-					licensedOV2));
+					"Professional use OS", remote.getCategory(2), "-"));
 			remote.saveLicensedObject(new LicensedObjectOperatingSystem(
 					"Microsoft", "Windows 2008 Server", "Server use OS", remote
-							.getCategory(3), "", licensedOV3));
+							.getCategory(3), ""));
 			remote.saveLicensedObject(new LicensedObjectOperatingSystem(
 					"Linux", "Ubuntu Server 10.x", "Server use OS", remote
-							.getCategory(4), "", licensedOV4));
+							.getCategory(4), ""));
 			remote.saveLicensedObject(new LicensedObjectSoftware("Adobe",
 					"Photoshop CS5.5", "Bitmap images creation/edition", remote
-							.getCategory(5), 2, licensedOV5));
+							.getCategory(5), 2));
 
-			/*List<Category> categories = remote.getCategories();
-			for (Category category : categories) {
-				System.out.println(category);
-			}
+			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 2, 1,
+					licensedOK1, remote.getLicensedObject(1)));
+			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 4, 1,
+					licensedOK2, remote.getLicensedObject(2)));
+			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 3, 1,
+					licensedOK3, remote.getLicensedObject(3)));
+			remote.saveLicensedObjectVersion(new LicensedObjectVersion(7, 3, 6,
+					null, remote.getLicensedObject(4)));
+			remote.saveLicensedObjectVersion(new LicensedObjectVersion(10, 2,
+					2, licensedOK4, remote.getLicensedObject(5)));
 
-			List<User> users = remote.getUsers();
-			for (User user : users) {
-				System.out.println(user);
-			}
-
-			List<UserGroup> usergroups = remote.getUserGroups();
-			for (UserGroup usergroup : usergroups) {
-				System.out.println(usergroup);
-			}
-
-			List<LicensedObject> los = remote.getLicensedObjects();
-			for (LicensedObject lo : los) {
-				System.out.println(lo);
-			}*/
+			/*
+			 * List<Category> categories = remote.getCategories(); for (Category
+			 * category : categories) { System.out.println(category); }
+			 * 
+			 * List<User> users = remote.getUsers(); for (User user : users) {
+			 * System.out.println(user); }
+			 * 
+			 * List<UserGroup> usergroups = remote.getUserGroups(); for
+			 * (UserGroup usergroup : usergroups) {
+			 * System.out.println(usergroup); }
+			 * 
+			 * List<LicensedObject> los = remote.getLicensedObjects(); for
+			 * (LicensedObject lo : los) { System.out.println(lo); }
+			 */
 
 			System.out.println("-------------------------------");
 			System.out.println("- End of the insertion part ! -");
 			System.out.println("-------------------------------");
-			
-			/*User tmpUser = remote.getUser("admin");
-			System.out.println(tmpUser.getPassword());*/
-			
-			LicensedObjectOperatingSystem temp = remote.getLicensedObjectOperatingSystem(1);
+
+			/*
+			 * User tmpUser = remote.getUser("admin");
+			 * System.out.println(tmpUser.getPassword());
+			 */
+
+			LicensedObjectOperatingSystem temp = remote
+					.getLicensedObjectOperatingSystem(1);
 
 		} catch (NamingException e) {
 			e.printStackTrace();
